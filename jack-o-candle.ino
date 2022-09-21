@@ -126,7 +126,7 @@ void loop() {
   
   }
    strip.show();
-   delay(22);
+   delay(50);
   
 } //loop()
 
