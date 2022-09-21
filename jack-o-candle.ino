@@ -7,8 +7,8 @@
 
 */
 
-#define PIN 2              // Which pin are those Neopixels hook up to?
-#define NUMBER_OF_FLAMES 5 // depends on number of neopixel triplets. 5 for 16 NeoPixel ring. 4 for 12 NeoPixel ring
+#define PIN 17              // Which pin are those Neopixels hook up to?
+#define NUMBER_OF_FLAMES 7 // depends on number of neopixel triplets. 5 for 16 NeoPixel ring. 4 for 12 NeoPixel ring
 #define FLAME_WIDTH 3      // How wide are the flames (in LEDs)
 #define FLICKER_CHANCE 3   // increase this to increase the chances an individual flame will flicker
 
@@ -20,7 +20,7 @@
 //   NEO_KHZ400  400 KHz (classic 'v1' (not v2) FLORA pixels, WS2811 drivers)
 //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUMBER_OF_FLAMES * FLAME_WIDTH, PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUMBER_OF_FLAMES * FLAME_WIDTH, PIN, NEO_GRBW + NEO_KHZ800);
 
 uint32_t rez_range = 256*3;
 #define D_ false
@@ -40,7 +40,7 @@ struct flame_element{
   byte acc;
  
  #define SCALERVAL 256*3
- const int flamecolors[22][3] = {
+ const double flamecolors[22][3] = {
 { SCALERVAL, 0,  0},
 { SCALERVAL, 0,  0},
 { SCALERVAL, 0,  0},
